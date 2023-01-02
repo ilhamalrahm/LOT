@@ -30,15 +30,8 @@ const Home=()=>{
 
     return(
         //HTML code here(Use inline CSS and bootstrap)
-        <div className="main">
-            <h1 className="username">Usernamedsflhsdalfjas;</h1>
-            <input id="username" type="text" />
-    
-            <h1 className="username">name</h1>
-            <input id="name" type="text" />
-            <h1 className="username">password</h1>
-            <input id="password" type="text" />
-            <input id="button"  type="button" />
+        <div className="main" style={{backgroundImage:"bg.png",height:"200px",width:"500px"}}>
+
 
         </div>
 
