@@ -39,26 +39,26 @@ const Home=()=>{
     return(
         //HTML code here(Use inline CSS and bootstrap)
         <div className="main" style={{backgroundImage:`url(${bg})`,height:"100vh"}}>
-
+            
             <div>
-            <section style={{backgroundColor:"indigo",height:"50%",padding:"1%"}}>
+            <nav class="navbar navbar-expand-lg navbar-light bg-indigo d-flex" style={{backgroundColor:"indigo",height:"50%",padding:"1%"}}>
                 <img align="left" src={logo} style={{width:"3%",height:"3%"}}></img>
                 <a href="www.google.com" style={{paddingLeft:"60%",paddingRight:"1%",outline:"none",border:"none",fontWeight:"bold",cursor:"pointer",textDecorationThickness:"30%",textDecorationColor:"orange",color:"white"}}>Home</a>
                 <a href="www.google.com" style={{padding:"1%",outline:"none",border:"none",fontWeight:"bold",cursor:"pointer",textDecorationThickness:"30%",textDecorationColor:"orange",color:"white"}}>About</a>
                 <a href="www.google.com" style={{padding:"1%",outline:"none",border:"none",fontWeight:"bold",cursor:"pointer",textDecorationThickness:"30%",textDecorationColor:"orange",color:"white"}}>Itinerary</a>
                 <a href="www.google.com" style={{padding:"1%",outline:"none",border:"none",fontWeight:"bold",cursor:"pointer",textDecorationThickness:"30%",textDecorationColor:"orange",color:"white"}}>Committees</a>
                 <a href="www.google.com" style={{padding:"1%",outline:"none",border:"none",fontWeight:"bold",cursor:"pointer",textDecorationThickness:"30%",textDecorationColor:"orange",color:"white"}}>Profile</a>
-            </section>
+            </nav>
             </div>
 
 
             <div>
-                <img src={logo} style={{height:"15%",width:"15%",padding:"2%"}}></img>
+                <img align="center" src={logo} style={{height:"15%",width:"15%",padding:"2%"}}></img>
             </div>
 
 
             <div>
-                <img src={date} style={{padding:"1%"}}></img>
+                <img className="date" src={date} style={{padding:"1%"}}></img>
             </div>
 
 
@@ -68,7 +68,7 @@ const Home=()=>{
 
 
             <div>
-                <img src={mun} style={{height:"100%",width:"100%",padding:"3%"}}></img>
+                <img className="mun d-flex" src={mun} style={{height:"100%",width:"100%",padding:"3%"}}></img>
             </div>
             
         </div>
