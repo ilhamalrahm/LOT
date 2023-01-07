@@ -20,14 +20,14 @@ const About=()=>{
 
             <div className='tabs'>
                 <ul style={{ display: 'flex', justifyContent: 'flex-end', placeSelf: 'center', listStyle: 'none' }}>
-                    <li style={{ padding: "3% 2.5% 2% 2.5%", fontFamily: 'Plus Jakarta Sans', color: "#FFFFFF", letterSpacing: '0.02em' }}>Home</li>
-                    <li style={{
+                    <a href="www.google.com" style={{ padding: "3% 2.5% 2% 2.5%", fontFamily: 'Plus Jakarta Sans', color: "#FFFFFF", letterSpacing: '0.02em',textDecoration:"none"}}>Home</a>
+                    <a href="www.google.com" style={{
                         padding: "3% 2.5% 2% 2.5%", fontFamily: 'Plus Jakarta Sans', color: "white", textDecoration: 'underline', textDecorationColor: "#FBBC05",
                         textDecorationThickness: 3, textShadow: '0px 0px 5px #FBBC05', letterSpacing: '0.02em'
-                    }}>About</li>
-                    <li style={{ padding: "3% 2.5% 2% 2.5%", fontFamily: 'Plus Jakarta Sans', color: "#FFFFFF", letterSpacing: '0.02em' }}>Itinerary</li>
-                    <li style={{ padding: "3% 2.5% 2% 2.5%", fontFamily: 'Plus Jakarta Sans', color: "#FFFFFF", letterSpacing: '0.02em' }}>Committees</li>
-                    <li style={{ padding: "3% 2.5% 2% 2.5%", fontFamily: 'Plus Jakarta Sans', color: "#FFFFFF", letterSpacing: '0.02em' }}>Profile</li>
+                    }}>About</a>
+                    <a href="www.google.com" style={{ padding: "3% 2.5% 2% 2.5%", fontFamily: 'Plus Jakarta Sans', color: "#FFFFFF", letterSpacing: '0.02em',textDecoration:"none"}}>Itinerary</a>
+                    <a href="www.google.com" style={{ padding: "3% 2.5% 2% 2.5%", fontFamily: 'Plus Jakarta Sans', color: "#FFFFFF", letterSpacing: '0.02em',textDecoration:"none"}}>Committees</a>
+                    <a href="www.google.com" style={{ padding: "3% 2.5% 2% 2.5%", fontFamily: 'Plus Jakarta Sans', color: "#FFFFFF", letterSpacing: '0.02em',textDecoration:"none"}}>Profile</a>
                 </ul>
             </div>
             </div>
