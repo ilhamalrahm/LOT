@@ -5,12 +5,10 @@ let name = localStorage.getItem("name")
 ? localStorage.getItem("name")
 : "";
 
-let username = localStorage.getItem("username")
-  ? localStorage.getItem("token")
+let email = localStorage.getItem("email")
+  ? localStorage.getItem("email")
   : "";
-let team = localStorage.getItem("team")
-  ? localStorage.getItem("team")
-  : "";
+
 
 // let username=localStorage.getItem("userdetails").username
 //     ? localStorage.getItem("userdetails").username
@@ -22,20 +20,19 @@ let team = localStorage.getItem("team")
 export const initialState = {
   token: token,
   name:name,
-  username:username,
-  team:team
+  email:email,
+
 };
  
 export const AuthReducer = (initialState, action) => {
   switch (action.type) {
     case 'set':
-      const {token,username,team,name}=action.payload;
-      console.log("in reducer "+username)
+      const {token,email,name}=action.payload;
+      console.log("in reducer "+email)
       return{
         ...initialState,
         token,
-        username,
-        team,
+        email,
         name
       }
     default:

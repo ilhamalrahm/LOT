@@ -5,19 +5,20 @@ import "bootstrap/dist/css/bootstrap.css";
 const SignUpPage=()=>{
 
     const HandleSubmit=()=>{
-       var username=document.getElementById('username').value;
+       var email=document.getElementById('email').value;
         var password=document.getElementById('password').value;
        var name=document.getElementById('name').value;
 
-        axios.post("/api/user/signUp",{username,password,name}).then(res=>{
+        axios.post("/api/user/signUp",{email,password,name}).then(res=>{
             console.log(res.data);
         })
     }
 
     return(
+        //HTML code here(Use inline CSS and bootstrap)
         <div className="main">
-            <h1 className="username">Username</h1>
-            <input id="username" type="text" />
+            <h1 className="email">Email</h1>
+            <input id="email" type="text" />
             <h1 className="username">name</h1>
             <input id="name" type="text" />
             <h1 className="username">password</h1>

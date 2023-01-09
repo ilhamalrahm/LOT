@@ -8,13 +8,19 @@ const User = new Schema({
     name:{
         type:String
     },
-    username:{
+    email:{
         type:String
     },
     password:{
         type:String
     },
-    team:{
+    college:{
+        type:String
+    },
+    committee:{
+        type:String
+    },
+    assigned:{
         type:String
     }
 });

@@ -13,9 +13,12 @@ router.post("/signUp",async (req, res) => {
 
     var userObj = {
         name: req.body.name,
-        username: req.body.username,
+        email: req.body.email,
         password:req.body.password,
-        team:"Random"
+        college:"",
+        committee:"",
+        assigned:""
+        
    
     }
 
@@ -48,17 +51,22 @@ router.post("/signUp",async (req, res) => {
 router.post("/signIn",async (req, res) => {
         // checks for validation result
      
-
+        console.log("in signin")
         try {
-            const { username, password } = req.body;
+            const { email, password } = req.body;
+            console.log(email)
 
             // check if user exists in the database
-            let user = await User.findOne({ username });
+            let user = await User.findOne({ email });
+            console.log(user)
+            
             if (!user) {
+                
                 return res.status(400).json({
-                    errors: [{ msg: 'Invalid username' }]
+                    errors: [{ msg: 'Invalid email' }]
                 });
             }
+            
 
             // check if the password matches
             const isMatch = await bcrypt.compare(password, user.password);
@@ -67,20 +75,19 @@ router.post("/signIn",async (req, res) => {
                    errors: [{ msg: 'Invalid Password' }]
                 });
             }
-
+            
             const payload = {
                 user: {
                   userId: user._id,
-                  username: user.username
+                  email: user.email
                 }
             };
             
 
-            token = user.generateAuthToken(user.username);
+            token = user.generateAuthToken(user.email);
             const userdetails={
                 
-                username:user.username,
-                team:user.team,
+                email:user.email,
                 name:user.name,
                 token:token
 

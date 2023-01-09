@@ -9,23 +9,25 @@ const SignInPage=()=>{
     const navigate = useNavigate();
     const dispatch=useStateDispatch();
     var userdetails={
-        username:localStorage.getItem("username"),
-        name:localStorage.getItem("name"),
-        team:localStorage.getItem("team"),
+        email:localStorage.getItem("email"),
+        name:localStorage.getItem("name"),  
         token:localStorage.getItem("token"),
         
     }
 
     const HandleSubmit=()=>{
-       var username=document.getElementById('username').value;
+       var email=document.getElementById('email').value;
         var password=document.getElementById('password').value;
      
 
-        axios.post("/api/user/signIn",{username,password}).then((res)=>{
+        axios.post("/api/user/signIn",{email,password}).then((res)=>{
             console.log("Signin res " +res)
-            dispatch({type:"set",payload:res.data.context})
+            localStorage.setItem('email',res.data.context.email)
+            localStorage.setItem('name',res.data.context.name)
+            localStorage.setItem('token',res.data.context.token)
+            var newstate=dispatch({type:"set",payload:res.data.context})
 
-            navigate("/home");
+            navigate("/landing");
             
             
         })
@@ -34,8 +36,8 @@ const SignInPage=()=>{
     return(
         //HTML code here(Use inline CSS and bootstrap)
         <div className="mainx`">
-            <h1 className="username">Username</h1>
-            <input id="username" type="text" />
+            <h1 className="email">Email</h1>
+            <input id="email" type="text" />
             <h1 className="username">password</h1>
             <input id="password" type="text" />
             <input id="button" onClick={HandleSubmit} type="button" />

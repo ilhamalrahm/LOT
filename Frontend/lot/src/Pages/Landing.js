@@ -18,7 +18,7 @@ const Home=()=>{
 
     var context=useTheState()
     var dispatch=useStateDispatch()
-    console.log("context is  "+context.username)
+    console.log("context is  "+context.email)
 
 
 
@@ -38,10 +38,11 @@ const Home=()=>{
 
     return(
         //HTML code here(Use inline CSS and bootstrap)
-        <div className="main" style={{backgroundImage:`url(${bg})`,height:"100vh"}}>
+        <div classNameName="main" style={{backgroundImage:`url(${bg})`,height:"100vh"}}>
             
             <div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-indigo d-flex" style={{backgroundColor:"indigo",height:"50%",padding:"1%"}}>
+            <nav className="navbar navbar-expand-lg navbar-light bg-indigo d-flex" style={{backgroundColor:"indigo",height:"50%",padding:"1%"}}>
+                    
                 <img align="left" src={logo} style={{width:"3%",height:"3%"}}></img>
                 <a href="www.google.com" style={{paddingLeft:"60%",paddingRight:"1%",outline:"none",border:"none",fontWeight:"bold",cursor:"pointer",textDecorationThickness:"30%",textDecorationColor:"orange",color:"white"}}>Home</a>
                 <a href="www.google.com" style={{padding:"1%",outline:"none",border:"none",fontWeight:"bold",cursor:"pointer",textDecorationThickness:"30%",textDecorationColor:"orange",color:"white"}}>About</a>
@@ -58,7 +59,7 @@ const Home=()=>{
 
 
             <div>
-                <img className="date" src={date} style={{padding:"1%"}}></img>
+                <img classNameName="date" src={date} style={{padding:"1%"}}></img>
             </div>
 
 
@@ -68,7 +69,7 @@ const Home=()=>{
 
 
             <div>
-                <img className="mun d-flex" src={mun} style={{height:"100%",width:"100%",padding:"3%"}}></img>
+                <img classNameName="mun d-flex" src={mun} style={{height:"100%",width:"100%",padding:"3%"}}></img>
             </div>
             
         </div>
