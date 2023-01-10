@@ -7,6 +7,7 @@ import bg from './bg.png';
 import logo from './logo.png';
 import mun from './mun.png';
 import date from './date.png';
+import Navbar from '../Components/Navbar';
 
 
 
@@ -19,38 +20,42 @@ const Home=()=>{
     var context=useTheState()
     var dispatch=useStateDispatch()
     console.log("context is  "+context.email)
+    
+    var userdetails={
+        email:localStorage.getItem("email"),
+        name:localStorage.getItem("name"),  
+        token:localStorage.getItem("token"),
+
+        
+    }
+
+    const ToRegister=()=>{
+        console.log("in register click")
+        navigate("/signup");
+    }
 
 
 
-    // useEffect(()=>{
-    //     const checkUser=async()=>{
-    //         axios.get("/api/user/home",{token:context.token}).then((res)=>{
-    //             console.log(res.data);
-    //             console.log("usecheck")
+    useEffect(()=>{
+        // const checkUser=async()=>{
+        //     axios.get("/api/user/home",{token:context.token}).then((res)=>{
+        //         console.log(res.data);
+        //         console.log("usecheck")
 
-    //         }).catch(err=>{
-    //             console.log("error occured " +err);
-    //             navigate("/signIn")
-    //         });
-    //     }
-    //     checkUser();
-    // },[]);
+        //     }).catch(err=>{
+        //         console.log("error occured " +err);
+        //         navigate("/signIn")
+        //     });
+        // }
+        // checkUser();
+        document.getElementById("home").style.textDecoration="underline";
+    },[]);
 
     return(
         //HTML code here(Use inline CSS and bootstrap)
-        <div classNameName="main" style={{backgroundImage:`url(${bg})`,height:"100vh"}}>
+        <div classNameName="main" style={{backgroundImage:`url(${bg})`,height:"100vh",width:"100vw"}}>
             
-            <div>
-            <nav className="navbar navbar-expand-lg navbar-light bg-indigo d-flex" style={{backgroundColor:"indigo",height:"50%",padding:"1%"}}>
-                    
-                <img align="left" src={logo} style={{width:"3%",height:"3%"}}></img>
-                <a href="www.google.com" style={{paddingLeft:"60%",paddingRight:"1%",outline:"none",border:"none",fontWeight:"bold",cursor:"pointer",textDecorationThickness:"30%",textDecorationColor:"orange",color:"white"}}>Home</a>
-                <a href="www.google.com" style={{padding:"1%",outline:"none",border:"none",fontWeight:"bold",cursor:"pointer",textDecorationThickness:"30%",textDecorationColor:"orange",color:"white"}}>About</a>
-                <a href="www.google.com" style={{padding:"1%",outline:"none",border:"none",fontWeight:"bold",cursor:"pointer",textDecorationThickness:"30%",textDecorationColor:"orange",color:"white"}}>Itinerary</a>
-                <a href="www.google.com" style={{padding:"1%",outline:"none",border:"none",fontWeight:"bold",cursor:"pointer",textDecorationThickness:"30%",textDecorationColor:"orange",color:"white"}}>Committees</a>
-                <a href="www.google.com" style={{padding:"1%",outline:"none",border:"none",fontWeight:"bold",cursor:"pointer",textDecorationThickness:"30%",textDecorationColor:"orange",color:"white"}}>Profile</a>
-            </nav>
-            </div>
+            <Navbar/>
 
 
             <div>
@@ -64,7 +69,7 @@ const Home=()=>{
 
 
             <div>
-                <button onClick={"www.google.com"} style={{border:"none",color:"white",backgroundColor:"indigo",fontSize:"150%"}}>Register Now</button>
+                <button onClick={ToRegister} style={{border:"none",color:"white",backgroundColor:"indigo",fontSize:"150%"}}>Register Now</button>
             </div>
 
 
