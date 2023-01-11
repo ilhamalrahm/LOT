@@ -33,6 +33,11 @@ const Home=()=>{
         console.log("in register click")
         navigate("/signup");
     }
+    const ToLogin=()=>{
+
+        navigate("/signin");
+
+    }
 
 
 
@@ -48,34 +53,44 @@ const Home=()=>{
         //     });
         // }
         // checkUser();
+        
         document.getElementById("home").style.textDecoration="underline";
+        document.getElementById("home").style.textDecorationColor= "#FBBC05"
     },[]);
 
     return(
         //HTML code here(Use inline CSS and bootstrap)
-        <div classNameName="main" style={{backgroundImage:`url(${bg})`,height:"100vh",width:"100vw"}}>
+        <div className="main" style={{backgroundImage:`url(${bg})`,backgroundPosition:"center",height:"100vh",width:"100vw"}}>
             
             <Navbar/>
+            <div className="area d-flex flex-column justify-content-center p-5">
+
+                <div>
+                    <img align="center" src={logo} style={{height:"15%",width:"15%",padding:"2%"}}></img>
+                </div>
 
 
-            <div>
-                <img align="center" src={logo} style={{height:"15%",width:"15%",padding:"2%"}}></img>
+                <div>
+                    <img className="date" src={date} style={{padding:"2%",height:"50%",width:"50%"}}></img>
+                </div>
+
+
+                <div>
+                    <button onClick={ToRegister} style={{border:"none",color:"white",backgroundColor:"indigo",fontSize:"1.5rem"}}>Register Now</button>
+                </div>
+                <div className='m-2'>
+                    <button onClick={ToLogin} style={{border:"none",color:"white",backgroundColor:"indigo",fontSize:"1.5rem"}}>Sign in</button>
+                </div>
+
+
+                <div className='d-flex justify-content-center'>
+                    <img className="mun d-flex" src={mun} style={{height:"70%",width:"70%",padding:"3%"}}></img>
+                </div>
+
             </div>
 
 
-            <div>
-                <img classNameName="date" src={date} style={{padding:"1%"}}></img>
-            </div>
-
-
-            <div>
-                <button onClick={ToRegister} style={{border:"none",color:"white",backgroundColor:"indigo",fontSize:"150%"}}>Register Now</button>
-            </div>
-
-
-            <div>
-                <img classNameName="mun d-flex" src={mun} style={{height:"100%",width:"100%",padding:"3%"}}></img>
-            </div>
+            
             
         </div>
 

@@ -8,6 +8,15 @@ let name = localStorage.getItem("name")
 let email = localStorage.getItem("email")
   ? localStorage.getItem("email")
   : "";
+let college = localStorage.getItem("college")
+  ? localStorage.getItem("college")
+  : "";
+let committee = localStorage.getItem("committee")
+  ? localStorage.getItem("committee")
+  : "";
+let assigned = localStorage.getItem("assigned")
+  ? localStorage.getItem("assigned")
+  : "";
 
 
 // let username=localStorage.getItem("userdetails").username
@@ -21,6 +30,9 @@ export const initialState = {
   token: token,
   name:name,
   email:email,
+  college:college,
+  committee:committee,
+  assigned:assigned
 
 };
  
@@ -33,7 +45,9 @@ export const AuthReducer = (initialState, action) => {
         ...initialState,
         token,
         email,
-        name
+        name,
+        college,
+        committee
       }
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

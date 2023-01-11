@@ -15,7 +15,7 @@ router.post("/signUp",async (req, res) => {
         name: req.body.name,
         email: req.body.email,
         password:req.body.password,
-        college:"",
+        college:req.body.college,
         committee:"",
         assigned:""
         
@@ -89,7 +89,11 @@ router.post("/signIn",async (req, res) => {
                 
                 email:user.email,
                 name:user.name,
-                token:token
+                token:token,
+                college:user.college,
+                committee:user.committee,
+                assigned:user.assigned
+
 
          
         }
@@ -106,6 +110,18 @@ router.post("/signIn",async (req, res) => {
             res.status(500).send({ success: false, message: 'Oops, server error' });
         }
 });
+
+router.get("/logout",(req,res)=>{
+    res.cookie("jwt","loggedout",{
+
+        httpOnly:true,
+        secure:true,
+        sameSite:"None",
+        // domain:"https://verichain.live"
+    }).status(200).json({success:true,data:"Logged out!"});
+
+}
+);
 
 
 router.get("/home",authenticate,async (req, res) => {

@@ -14,12 +14,25 @@ const Profile = () => {
         email:localStorage.getItem("email"),
         name:localStorage.getItem("name"),  
         token:localStorage.getItem("token"),
+        college:localStorage.getItem("college")
+        
+    }
+    
+    const Logout=()=>{
+        axios.get("api/user/logout").then(res=>{
+            sessionStorage.clear();
+            localStorage.clear();
+            navigate('/landing')
+        }).catch(err=>{
+            console.log("Error occurred .. "+err)
+        })
         
     }
     
 
     useEffect(()=>{
         document.getElementById("profile").style.textDecoration="underline";
+        document.getElementById("profile").style.textDecorationColor= "#FBBC05"
         dispatch({type:"set",payload:userdetails})
         console.log(context)
         
@@ -45,8 +58,14 @@ const Profile = () => {
                 
 
                 <div className="c position-relative d-flex justify-content-end w-100 h-100" >
+                
+                {/* <div className="logout position-relative d-flex justify-content-around w-100 ">
+                    <h1 className="logout text-red fw-bold text-danger">You tried to Sign in! Log out first</h1>
+                </div> */}
+                
 
                 <div className='details position-relative' style={{ backgroundColor: 'black', fontFamily: "Plus Jakarta Sans",height:"100%", width:"60%"  }}>
+                <input className="btn btn-primary float-end" onClick={Logout} type="button" value="Logout" style={{backgroundColor:"#1E0B39",borderColor:"black"}}/>
                     <h1 style={{ color: '#FFFFFF', padding: "5% 14% 0% 14%", }}>Profile</h1>
                     <div className="details text-white" style={{ color: '#FFB703', textAlign: 'left' }}>
                         <form action="noaction.php">
@@ -54,22 +73,27 @@ const Profile = () => {
                                 <span style={{ padding: '0% 0% 5% 0%' }}>Name</span> <br></br>
                                 <input type="text" disabled="true" value={context.name} name="" style={{fontSize:"1rem", width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"white"  }}></input>
                             </div>
+
                             <div className="formgroup2 position-relative text-white" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '5%' }}>
                                 Email ID <br></br>
-                                <input type="email" disabled="true" value={context.email} name="" style={{fontSize:"1rem", width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"white" }}></input>
+                                <input className='text-break' type="email" disabled="true" value={context.email} name="" style={{fontSize:"1rem", width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"white",overflowX:"scroll" }}></input>
                             </div>
+
                             <div className="formgroup3" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '5%' }}>
                                 College <br></br>
-                                <input type="email" disabled="true" name="" style={{fontSize:"1rem", width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"white" }}></input>
+                                <input type="email" value={context.college} disabled="true" name="" style={{fontSize:"1rem", width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"white" }}></input>
                             </div>
+
                             <div className="formgroup4" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '5%' }}>
                                 Committee <br></br>
                                 <input type="text" disabled="true" name="" style={{ fontSize:"1rem",width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"white" }}></input>
                             </div>
+
                             <div className="formgroup5" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '5%' }}>
                                 Assigned As <br></br>
-                                <input type="text" disabled="true" name="" style={{ fontSize:"1remrem",width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"white" }}></input>
+                                <input type="text" disabled="true" name="" style={{ fontSize:"1rem",width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"white" }}></input>
                             </div>
+
                         </form>
                     </div>
                 </div>
