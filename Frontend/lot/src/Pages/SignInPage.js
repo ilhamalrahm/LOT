@@ -4,8 +4,23 @@ import "bootstrap/dist/css/bootstrap.css";
 import Navbar from '../Components/Navbar';
 import { useStateDispatch, useTheState } from '../Context';
 import { useNavigate } from "react-router-dom";
-
+import Footer from '../Components/Footer';
+import SideBar from '../Components/Sidebar';
+import { useMediaQuery } from 'react-responsive';
+import Navmob from '../Components/Navmob';
 const SignInPage=()=>{
+    const isDesktopOrLaptop = useMediaQuery({
+        query: '(min-width: 840px)'
+      });
+      var elem;
+
+      if(!isDesktopOrLaptop)
+      {
+        elem=<Navmob/>
+      }
+      else{
+        elem=<Navbar/>
+      }
 
     const navigate = useNavigate();
     const dispatch=useStateDispatch();
@@ -32,7 +47,7 @@ const SignInPage=()=>{
      
 
         axios.post("/api/user/signIn",{email,password}).then((res)=>{
-            console.log("Signin res " +res)
+            console.log("Signin res " +res.data.context.college)
             localStorage.setItem('email',res.data.context.email)
             localStorage.setItem('name',res.data.context.name)
             localStorage.setItem('token',res.data.context.token)
@@ -41,7 +56,7 @@ const SignInPage=()=>{
             localStorage.setItem('assigned',res.data.context.assigned)
             var newstate=dispatch({type:"set",payload:res.data.context})
 
-            navigate("/landing");
+            navigate("/profile");
             
             
         })
@@ -50,18 +65,19 @@ const SignInPage=()=>{
     return(
         //HTML code here(Use inline CSS and bootstrap)
 
-        <div className='position-relative' style={{ margin: 0,overflow:"hidden", padding: 0,backgroundColor: '#181818',height:"100vh",width:"100vw" }}>
-        <div className="bar">
-            <Navbar/>
+        <div className='position-relative' style={{ margin: 0,overflowY:"scroll", padding: 0,backgroundColor: '#181818',height:"100vh",width:"100vw" }}>
+            <div className="bar">
+            {elem}
 
-        </div>
+            </div>
+            <SideBar/>
         
 
         <div className="c position-relative d-flex justify-content-start w-100 h-100" >
 
-            <div className='details position-relative p-5' style={{ backgroundColor: 'white', fontFamily: "Plus Jakarta Sans",height:"100%", width:"60%"  }}>
-                <h1 className='text-bold' style={{ color: 'black', padding: "5% 14% 0% 14%", }}>Sign in</h1>
-                <p style={{color:"gray"}} className="welcome">Welcome, please sign in if you have already registered!</p>
+            <div className='details position-relative p-5' style={{ backgroundColor: 'white', fontFamily: "Poppins",height:"100%", width:"60%"  }}>
+                <h1 className='text-bold' style={{ color: 'black', padding: "5% 14% 0% 14%", }}>Log in</h1>
+                <p style={{color:"gray"}} className="welcome">Welcome, please Log in if you have already registered!</p>
                 <div className="details " style={{ color: '#FFB703', textAlign: 'left' }}>
                     <form action="noaction.php">
                   
@@ -75,13 +91,18 @@ const SignInPage=()=>{
                             <input type="password" id="password" className="password p-2" style={{fontSize:"1rem", width: '100%'}}/>
                         </div>
                       
-                        <div className="formgroup6" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '3%' }}>
+                        <div className="formgroup6 d-flex justify-content-center" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '3%' }}>
                             
                             <input className="btn btn-primary" onClick={HandleSubmit} type="button" value="Login" style={{backgroundColor:"#1E0B39"}}/>
                         </div>
+                        
                     </form>
+                    
                 </div>
+                <p style={{color:"gray"}} className="welcome">Not Registered? Go to <a href="/signup" className="register">Register</a></p>
             </div>
+
+            
 
         </div>
 
@@ -112,7 +133,7 @@ const SignInPage=()=>{
 
         
 
-        
+        <Footer/>
 
 
 </div>

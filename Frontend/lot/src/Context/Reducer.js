@@ -39,15 +39,16 @@ export const initialState = {
 export const AuthReducer = (initialState, action) => {
   switch (action.type) {
     case 'set':
-      const {token,email,name}=action.payload;
-      console.log("in reducer "+email)
+      const {token,email,name,college,committee,assigned}=action.payload;
+      console.log("in reducer "+college)
       return{
         ...initialState,
         token,
         email,
         name,
         college,
-        committee
+        committee,
+        assigned
       }
     default:
       throw new Error(`Unhandled action type: ${action.type}`);

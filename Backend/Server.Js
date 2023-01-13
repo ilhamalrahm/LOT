@@ -24,14 +24,7 @@ app.use(bodyParser.urlencoded({
 // routes related to user and user auth
 app.use("/api/user", require('./Routes/user'));
 
-// routes related to user and user auth
-// app.use("/api/user", require("./routes/api/user"));
 
-// // route for recaptcha validation
-// app.use("/api/areyouhuman", require("./routes/api/recaptcha"));
-
-// // routes for everything related to the game
-// app.use("/api/game", require("./routes/api/play"));
 
 // listens to the app on PORT
 app.listen(port, () => {

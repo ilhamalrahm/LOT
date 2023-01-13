@@ -5,8 +5,24 @@ import { useStateDispatch, useTheState } from '../Context';
 import { useNavigate } from "react-router-dom";
 import map from './logo.png';
 import Navbar from '../Components/Navbar';
+import Footer from '../Components/Footer';
+import SideBar from '../Components/Sidebar';
+import { useMediaQuery } from 'react-responsive';
+import Navmob from '../Components/Navmob';
 
 const Profile = () => {
+    const isDesktopOrLaptop = useMediaQuery({
+        query: '(min-width: 840px)'
+      });
+      var elem;
+
+      if(!isDesktopOrLaptop)
+      {
+        elem=<Navmob/>
+      }
+      else{
+        elem=<Navbar/>
+      }
     const navigate = useNavigate();
     var context=useTheState()
     var dispatch=useStateDispatch()
@@ -31,9 +47,10 @@ const Profile = () => {
     
 
     useEffect(()=>{
+        console.log(context)
         document.getElementById("profile").style.textDecoration="underline";
         document.getElementById("profile").style.textDecorationColor= "#FBBC05"
-        dispatch({type:"set",payload:userdetails})
+        // dispatch({type:"set",payload:userdetails})
         console.log(context)
         
         axios.get("/api/user/home").then((res)=>{
@@ -50,11 +67,12 @@ const Profile = () => {
 
 
     return (
-        <div className='position-relative' style={{ margin: 0,overflow:"hidden", padding: 0,backgroundColor: '#181818',height:"100vh",width:"100vw" }}>
+        <div className='position-relative' style={{ margin: 0,overflow:"scroll", padding: 0,backgroundColor: '#181818',height:"100vh",width:"100vw" }}>
                 <div className="bar">
-                    <Navbar/>
+                {elem}
 
                 </div>
+                <SideBar/>
                 
 
                 <div className="c position-relative d-flex justify-content-end w-100 h-100" >
@@ -64,34 +82,34 @@ const Profile = () => {
                 </div> */}
                 
 
-                <div className='details position-relative' style={{ backgroundColor: 'black', fontFamily: "Plus Jakarta Sans",height:"100%", width:"60%"  }}>
+                <div className='details position-relative' style={{ backgroundColor: 'black', fontFamily: "Poppins",height:"100%", width:"60%" ,borderRadius:"30px" }}>
                 <input className="btn btn-primary float-end" onClick={Logout} type="button" value="Logout" style={{backgroundColor:"#1E0B39",borderColor:"black"}}/>
                     <h1 style={{ color: '#FFFFFF', padding: "5% 14% 0% 14%", }}>Profile</h1>
                     <div className="details text-white" style={{ color: '#FFB703', textAlign: 'left' }}>
                         <form action="noaction.php">
                             <div className="formgroup1" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '5%' }}>
                                 <span style={{ padding: '0% 0% 5% 0%' }}>Name</span> <br></br>
-                                <input type="text" disabled="true" value={context.name} name="" style={{fontSize:"1rem", width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"white"  }}></input>
+                                <input type="text" disabled="true" value={context.name} name="" style={{fontSize:"1rem", width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"#FBBC05"  }}></input>
                             </div>
 
                             <div className="formgroup2 position-relative text-white" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '5%' }}>
                                 Email ID <br></br>
-                                <input className='text-break' type="email" disabled="true" value={context.email} name="" style={{fontSize:"1rem", width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"white",overflowX:"scroll" }}></input>
+                                <input className='text-break' type="email" disabled="true" value={context.email} name="" style={{fontSize:"1rem", width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"#FBBC05",overflowX:"scroll" }}></input>
                             </div>
 
                             <div className="formgroup3" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '5%' }}>
                                 College <br></br>
-                                <input type="email" value={context.college} disabled="true" name="" style={{fontSize:"1rem", width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"white" }}></input>
+                                <input type="email" value={context.college} disabled="true" name="" style={{fontSize:"1rem", width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"#FBBC05" }}></input>
                             </div>
 
                             <div className="formgroup4" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '5%' }}>
                                 Committee <br></br>
-                                <input type="text" disabled="true" name="" style={{ fontSize:"1rem",width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"white" }}></input>
+                                <input type="text" disabled="true" value={context.committee} name="" style={{ fontSize:"1rem",width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"#FBBC05" }}></input>
                             </div>
 
                             <div className="formgroup5" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '5%' }}>
                                 Assigned As <br></br>
-                                <input type="text" disabled="true" name="" style={{ fontSize:"1rem",width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"white" }}></input>
+                                <input type="text" disabled="true" value={context.assigned} name="" style={{ fontSize:"1rem",width: '100%', background: 'linear-gradient(94.47deg, rgba(0, 0, 0, 0) 3.97%, rgba(0, 0, 0, 0.12) 58.88%, #000000 100.7%)', borderRadius: '5px', border: '1px solid #FFFFFF', padding: '2%',color:"#FBBC05" }}></input>
                             </div>
 
                         </form>
@@ -129,7 +147,7 @@ const Profile = () => {
 
                 
 
-      
+        <Footer/>
         </div>
     );
 }

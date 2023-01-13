@@ -4,8 +4,24 @@ import "bootstrap/dist/css/bootstrap.css";
 import Navbar from '../Components/Navbar';
 import { useStateDispatch, useTheState } from '../Context';
 import { useNavigate } from "react-router-dom";
+import Footer from '../Components/Footer';
+import SideBar from '../Components/Sidebar';
+import { useMediaQuery } from 'react-responsive';
+import Navmob from '../Components/Navmob';
 
 const SignUpPage=()=>{
+    const isDesktopOrLaptop = useMediaQuery({
+        query: '(min-width: 840px)'
+      });
+      var elem;
+
+      if(!isDesktopOrLaptop)
+      {
+        elem=<Navmob/>
+      }
+      else{
+        elem=<Navbar/>
+      }
 
     const navigate = useNavigate();
     var context=useTheState()
@@ -66,16 +82,17 @@ const SignUpPage=()=>{
 
         // </div>
 
-        <div className='position-relative' style={{ margin: 0,overflow:"hidden", padding: 0,backgroundColor: '#181818',height:"100vh",width:"100vw" }}>
-        <div className="bar">
-            <Navbar/>
+        <div className='position-relative' style={{ margin: 0,overflow:"scroll", padding: 0,backgroundColor: '#181818',height:"100vh",width:"100vw" }}>
+            <div className="bar">
+            {elem}
 
-        </div>
+            </div>
+            <SideBar/>
         
 
         <div className="c position-relative d-flex justify-content-end w-100 h-100" >
 
-            <div className='details position-relative' style={{ backgroundColor: 'white', fontFamily: "Plus Jakarta Sans",height:"100%", width:"60%"  }}>
+            <div className='details position-relative' style={{ backgroundColor: 'white', fontFamily: "Poppins",height:"100%", width:"60%"  }}>
                 <h1 className='text-bold' style={{ color: 'black', padding: "5% 14% 0% 14%", }}>Register</h1>
                 <p style={{color:"gray"}} className="welcome">Welcome, please enter your details!</p>
                 <div className="details " style={{ color: '#FFB703', textAlign: 'left' }}>
@@ -100,14 +117,15 @@ const SignUpPage=()=>{
                             Confirm Password <br></br>
                             <input type="password" id="confirm" className="confirm p-2" style={{fontSize:"1rem", width: '100%'}}/>
                         </div>
-                        <div className="formgroup6" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
+                        <div className="formgroup6 d-flex justify-content-center" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
                             
                             <input className="btn btn-primary" onClick={HandleSubmit} type="button" value="Register" style={{backgroundColor:"#1E0B39"}}/>
                         </div>
                     </form>
                 </div>
+                <p style={{color:"gray"}} className="welcome">Already Registered? Go to <a href="/signin" className="signin">Login Page</a></p>
             </div>
-
+            
         </div>
 
         
@@ -134,11 +152,11 @@ const SignUpPage=()=>{
 
         </div> */}
       
-
+        <Footer/>
         
 
         
-
+       
 
 </div>
 

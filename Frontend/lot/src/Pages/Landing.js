@@ -8,12 +8,31 @@ import logo from './logo.png';
 import mun from './mun.png';
 import date from './date.png';
 import Navbar from '../Components/Navbar';
+import instagram from '../images/insta.svg'
+import Footer from '../Components/Footer';
+import { useMediaQuery } from 'react-responsive';
+import Navmob from '../Components/Navmob';
+import SideBar from '../Components/Sidebar';
+
 
 
 
 
 
 const Home=()=>{
+
+    const isDesktopOrLaptop = useMediaQuery({
+        query: '(min-width: 840px)'
+      });
+      var elem;
+
+      if(!isDesktopOrLaptop)
+      {
+        elem=<Navmob/>
+      }
+      else{
+        elem=<Navbar/>
+      }
 
     const navigate = useNavigate();
 
@@ -60,27 +79,28 @@ const Home=()=>{
 
     return(
         //HTML code here(Use inline CSS and bootstrap)
-        <div className="main" style={{backgroundImage:`url(${bg})`,backgroundPosition:"center",height:"100vh",width:"100vw"}}>
+        <div className="main" style={{height:"100vh",width:"100vw",overflowY:"scroll",backgroundColor:"#11071F"}}>
             
-            <Navbar/>
-            <div className="area d-flex flex-column justify-content-center p-5">
+            {elem}
+            <SideBar/>
+            <div className="area d-flex flex-column justify-content-center p-5" style={{backgroundImage:`url(${bg})`,backgroundPosition:"center",height:"90%",width:"100%"}}>
 
                 <div>
-                    <img align="center" src={logo} style={{height:"15%",width:"15%",padding:"2%"}}></img>
+                    <img align="center" src={logo} style={{height:"15rem",width:"15rem",padding:"2%"}}></img>
                 </div>
 
 
                 <div>
-                    <img className="date" src={date} style={{padding:"2%",height:"50%",width:"50%"}}></img>
+                    <p className="date text-white" style={{fontSize:"2rem"}}>17-19th February 2023</p>{/* <img className="date" src={date} style={{padding:"2%",height:"8rem",width:"23rem"}}></img> */}
                 </div>
 
 
                 <div>
                     <button onClick={ToRegister} style={{border:"none",color:"white",backgroundColor:"indigo",fontSize:"1.5rem"}}>Register Now</button>
                 </div>
-                <div className='m-2'>
+                {/* <div className='m-2'>
                     <button onClick={ToLogin} style={{border:"none",color:"white",backgroundColor:"indigo",fontSize:"1.5rem"}}>Sign in</button>
-                </div>
+                </div> */}
 
 
                 <div className='d-flex justify-content-center'>
@@ -88,6 +108,8 @@ const Home=()=>{
                 </div>
 
             </div>
+
+            <Footer/>
 
 
             

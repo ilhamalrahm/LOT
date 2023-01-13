@@ -97,6 +97,7 @@ router.post("/signIn",async (req, res) => {
 
          
         }
+        console.log(userdetails.college + " here")
             res.setHeader('token', token);
             res.cookie("jwt",token,{
                 httpOnly:true,

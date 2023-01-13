@@ -13,6 +13,9 @@ import About from './Pages/About';
 import Profile from './Pages/Profile';
 import Itinerary from './Pages/Itinerary';
 import Committees from './Pages/Committees';
+import Navmob from './Components/Navmob';
+import SideBar from './Components/Sidebar';
+import UpdateSoon from './Pages/UpdateSoon';
 
 
 
@@ -29,7 +32,7 @@ function App() {
             <Route path="/landing" element={<Home/>}/>
             <Route path="/about" element={<About/>}/>
             <Route path="/profile" element={<Profile/>}/>
-            <Route path="/itinerary" element={<Itinerary/>}/>
+            <Route path="/itinerary" element={<UpdateSoon/>}/>
             <Route path="/committees" element={<Committees/>}/>
             
             {/* {
