@@ -3,8 +3,8 @@ import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.css";
 import { useStateDispatch, useTheState } from '../Context';
 import { useNavigate } from "react-router-dom";
-import map from '../Pages/map.png';
-import logo from '../Pages/logo.png'
+import map from '../images/map.png';
+import logo from '../images/logo.png'
 
 
 const SideBar=()=>{

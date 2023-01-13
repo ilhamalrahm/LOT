@@ -22,6 +22,7 @@ const SignUpPage=()=>{
       else{
         elem=<Navbar/>
       }
+      
 
     const navigate = useNavigate();
     var context=useTheState()
@@ -43,8 +44,11 @@ const SignUpPage=()=>{
 
     },[])
 
+    const [message,setMes]=useState("");
+
     const HandleSubmit=()=>{
         console.log("submitting")
+        setMes("");
        var email=document.getElementById('email').value;
         var password=document.getElementById('password').value;
         var confirm=document.getElementById('confirm').value;
@@ -60,6 +64,9 @@ const SignUpPage=()=>{
         axios.post("/api/user/signUp",{email,password,name,college}).then(res=>{
             console.log(res.data);
             navigate("/signin");
+        }).catch((err)=>{
+            console.log(err);
+            setMes("User Already exists!")
         })
 
        }
@@ -120,9 +127,12 @@ const SignUpPage=()=>{
                         <div className="formgroup6 d-flex justify-content-center" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
                             
                             <input className="btn btn-primary" onClick={HandleSubmit} type="button" value="Register" style={{backgroundColor:"#1E0B39"}}/>
+                            
                         </div>
+                        
                     </form>
                 </div>
+                <p className="message p-2" style={{color:"red"}}>{message}</p>
                 <p style={{color:"gray"}} className="welcome">Already Registered? Go to <a href="/signin" className="signin">Login Page</a></p>
             </div>
             

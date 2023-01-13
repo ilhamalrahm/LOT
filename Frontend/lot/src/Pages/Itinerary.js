@@ -3,7 +3,7 @@ import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.css";
 import { useStateDispatch, useTheState } from '../Context';
 import { useNavigate } from "react-router-dom";
-import map from './map.png';
+import map from '../images/map.png';
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import { useMediaQuery } from 'react-responsive';

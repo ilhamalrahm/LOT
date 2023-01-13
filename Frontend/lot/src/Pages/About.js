@@ -3,8 +3,8 @@ import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.css";
 import { useStateDispatch, useTheState } from '../Context';
 import { useNavigate } from "react-router-dom";
-import map from './map.png';
-import logo from './logo.png'
+import map from '../images/map.png';
+import logo from '../images/logo.png'
 import Navbar from '../Components/Navbar';
 import Footer from '../Components/Footer';
 import GoogleMapReact from 'google-map-react';

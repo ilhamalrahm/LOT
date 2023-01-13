@@ -9,40 +9,52 @@ const authenticate=require('../Middleware/Authenticate')
 router.post("/signUp",async (req, res) => {
 
     console.log("here")
+    
 
+    let user1 = await User.findOne({email:req.body.email});
+    if(user1!=null)
+    {
+        res.status(409).json({success:false,data:"User already exists!"})
+    }
+    else
+    {
+        var userObj = {
+            name: req.body.name,
+            email: req.body.email,
+            password:req.body.password,
+            college:req.body.college,
+            committee:"",
+            assigned:""
+            
+       
+        }
+    
+    
+        try {
+            const user = new User(userObj);
+            user.save().then(() => {
+                const payload = {
+                    user: {
+                      userId: user._id,
+                      username: user.username
+                    }
+                };
+                token = user.generateAuthToken(payload);
+                console.log(token);
+                res.setHeader('x-auth-token', token);
+                res.status(200).send({ message: "Sign up successful" });
+            }).catch((err) => {
+                res.status(403).json({ errors: [err] });
+                console.log(err)
+            })    
+        } catch (err) {
+            res.status(500).send({ error: 'Server error' });
+        }
 
-    var userObj = {
-        name: req.body.name,
-        email: req.body.email,
-        password:req.body.password,
-        college:req.body.college,
-        committee:"",
-        assigned:""
-        
-   
     }
 
 
-    try {
-        const user = new User(userObj);
-        user.save().then(() => {
-            const payload = {
-                user: {
-                  userId: user._id,
-                  username: user.username
-                }
-            };
-            token = user.generateAuthToken(payload);
-            console.log(token);
-            res.setHeader('x-auth-token', token);
-            res.status(200).send({ message: "Sign up successful" });
-        }).catch((err) => {
-            res.status(403).json({ errors: [err] });
-            console.log(err)
-        })    
-    } catch (err) {
-        res.status(500).send({ error: 'Server error' });
-    }
+ 
 });
 
 

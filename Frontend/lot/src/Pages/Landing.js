@@ -3,10 +3,10 @@ import axios from 'axios';
 import "bootstrap/dist/css/bootstrap.css";
 import { useStateDispatch, useTheState } from '../Context';
 import { useNavigate } from "react-router-dom";
-import bg from './bg.png';
-import logo from './logo.png';
-import mun from './mun.png';
-import date from './date.png';
+import bg from '../images/bg.png';
+import logo from '../images/logo.png';
+import mun from '../images/mun.png';
+import date from '../images/date.png';
 import Navbar from '../Components/Navbar';
 import instagram from '../images/insta.svg'
 import Footer from '../Components/Footer';
