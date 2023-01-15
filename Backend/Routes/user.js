@@ -9,6 +9,7 @@ const authenticate=require('../Middleware/Authenticate')
 router.post("/signUp",async (req, res) => {
 
     console.log("here")
+    console.log(req.body.fromMahe);
     
 
     let user1 = await User.findOne({email:req.body.email});
@@ -24,7 +25,9 @@ router.post("/signUp",async (req, res) => {
             password:req.body.password,
             college:req.body.college,
             committee:"",
-            assigned:""
+            assigned:"",
+            paymentDone:false,
+            fromMahe:req.body.fromMahe
             
        
         }

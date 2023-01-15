@@ -54,6 +54,8 @@ const SignUpPage=()=>{
         var confirm=document.getElementById('confirm').value;
        var name=document.getElementById('name').value;
        var college=document.getElementById('college').value;
+       var fromMahe=document.getElementById('fromMahe').checked;
+       console.log(fromMahe + " hi ");
 
        if(password!=confirm)
        {
@@ -61,7 +63,7 @@ const SignUpPage=()=>{
        }
        else{
 
-        axios.post("/api/user/signUp",{email,password,name,college}).then(res=>{
+        axios.post("/api/user/signUp",{email,password,name,college,fromMahe}).then(res=>{
             console.log(res.data);
             navigate("/signin");
         }).catch((err)=>{
@@ -125,6 +127,10 @@ const SignUpPage=()=>{
                             <input type="password" id="confirm" className="confirm p-2" style={{fontSize:"1rem", width: '100%'}}/>
                         </div>
                         <div className="formgroup6 d-flex justify-content-center" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
+                            <p className="mahe px-1 m-0">Are you from Mahe?</p>
+                            <input className='px-1' type="checkbox" id="fromMahe" name="fromMahe"/>
+                        </div>
+                        <div className="formgroup7 d-flex justify-content-center" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
                             
                             <input className="btn btn-primary" onClick={HandleSubmit} type="button" value="Register" style={{backgroundColor:"#1E0B39"}}/>
                             

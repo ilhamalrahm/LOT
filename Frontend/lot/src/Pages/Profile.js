@@ -38,7 +38,7 @@ const Profile = () => {
         axios.get("api/user/logout").then(res=>{
             sessionStorage.clear();
             localStorage.clear();
-            navigate('/landing')
+            navigate('/')
         }).catch(err=>{
             console.log("Error occurred .. "+err)
         })
