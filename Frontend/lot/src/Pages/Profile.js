@@ -67,7 +67,7 @@ const Profile = () => {
 
 
     return (
-        <div className='position-relative' style={{ margin: 0,overflow:"scroll", padding: 0,backgroundColor: '#181818',height:"100vh",width:"100vw" }}>
+        <div className='position-relative' style={{ margin: 0,overflow:"scroll", padding: 0,backgroundColor: '#181818',height:"100vh",width:"100vw",overflowY:"scroll",overflowX:"hidden" }}>
                 <div className="bar">
                 {elem}
 

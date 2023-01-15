@@ -24,7 +24,7 @@ const Navbar=()=>{
                     <div className='tabs p-2'>
                                 <ul style={{ display: 'flex', justifyContent: 'flex-end', placeSelf: 'center', listStyle: 'none' }}>
                                 
-                                    <a className='p-1' id="home" href="/landing" style={{ fontSize:"1rem", fontFamily: 'Poppins', color: "#FFFFFF",textDecoration:"none",textDecorationColor: "#FBBC05",
+                                    <a className='p-1' id="home" href="/" style={{ fontSize:"1rem", fontFamily: 'Poppins', color: "#FFFFFF",textDecoration:"none",textDecorationColor: "#FBBC05",
                                         textDecorationThickness: 3, textShadow: '0px 0px 5px #FBBC05'}}>Home</a>
 
                                     <a className='p-1' id="about" href="/about" style={{

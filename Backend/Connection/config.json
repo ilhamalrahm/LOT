@@ -1,5 +1,6 @@
 {
     "PORT": 5000,
-    "MONGODB_URI": "mongodb://0.0.0.0:27017/LOTtest",
+    "MONGODB_URI":"mongodb+srv://mun:LoT%402023@mun.xlwymjq.mongodb.net/?retryWrites=true&w=majority" ,
     "JWT_SECRET":"Somesecretcode"
 }
+

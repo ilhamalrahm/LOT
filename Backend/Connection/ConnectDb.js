@@ -4,10 +4,14 @@ const nconf = require('nconf');
 
 nconf.argv().env().file({ file: 'Connection/config.json' });
 
+
+var s=nconf.get("MONGODB_URI")
+console.log(s)
+
 // method that connects to the MongoDB database
 const ConnectDB = async () => {
     try {
-        await mongoose.connect("mongodb://0.0.0.0:27017/LOTtest", {
+        await mongoose.connect(s, {
             useNewUrlParser: true,
             useUnifiedTopology: true
         });

@@ -16,7 +16,7 @@ const SideBar=()=>{
         <div className="sidebar position-absolute" id="sidebar" style={{backgroundColor:"#181818",borderRadius:"5px",zIndex:"100", visibility:"hidden",right:"0%",height:"100vh",width:"40vw",boxShadow:"-4px 3px 4px"}}>
             <div className="btn btn-close position-absolute text-white"  onClick={Close} style={{left:"3%",top:"1%", backgroundColor:"white"}}></div>
             <div className="links pt-4">
-                <a className='p-1' id="home" href="/landing" style={{ fontSize:"1rem", fontFamily: 'Poppins', color: "#FFFFFF",textDecoration:"none",textDecorationColor: "#FBBC05",
+                <a className='p-1' id="home" href="/" style={{ fontSize:"1rem", fontFamily: 'Poppins', color: "#FFFFFF",textDecoration:"none",textDecorationColor: "#FBBC05",
                                         textDecorationThickness: 3, textShadow: '0px 0px 5px #FBBC05'}}>Home</a>
             </div>
 

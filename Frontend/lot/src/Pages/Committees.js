@@ -37,7 +37,7 @@ const Committees=()=>{
 
     return(
         //HTML code here(Use inline CSS and bootstrap)
-        <div className="main" style={{backgroundColor:"#181818",width:"100vw",height:"100vh",overflowY:"scroll"}}>
+        <div className="main position-absolute" style={{backgroundColor:"#181818",width:"100vw",height:"100vh",overflowY:"scroll",overflowX:"hidden"}}>
 
             {elem}
             <SideBar/>

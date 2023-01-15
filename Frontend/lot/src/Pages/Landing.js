@@ -79,11 +79,11 @@ const Home=()=>{
 
     return(
         //HTML code here(Use inline CSS and bootstrap)
-        <div className="main" style={{height:"100vh",width:"100vw",overflowY:"scroll",backgroundColor:"#11071F"}}>
+        <div className="main position-absolute" style={{height:"100vh",width:"100vw",overflowY:"scroll",overflowX:"hidden", backgroundColor:"#181818"}}>
             
             {elem}
             <SideBar/>
-            <div className="area d-flex flex-column justify-content-center p-5" style={{backgroundImage:`url(${bg})`,backgroundPosition:"center",height:"90%",width:"100%"}}>
+            <div className="area d-flex flex-column justify-content-center p-5" style={{height:"90%",width:"100%"}}>
 
                 <div>
                     <img align="center" src={logo} style={{height:"15rem",width:"15rem",padding:"2%"}}></img>
@@ -104,7 +104,7 @@ const Home=()=>{
 
 
                 <div className='d-flex justify-content-center'>
-                    <img className="mun d-flex" src={mun} style={{height:"70%",width:"70%",padding:"3%"}}></img>
+                    <img className="mun d-flex" src={mun} style={{height:"auto",width:"90%",padding:"3%"}}></img>
                 </div>
 
             </div>

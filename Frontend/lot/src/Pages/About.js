@@ -38,7 +38,7 @@ const About=()=>{
 
     return(
         //HTML code here(Use inline CSS and bootstrap)
-        <div className="main" style={{backgroundColor:"#181818",height:"100vh",width:"100vw",position:"absolute",overflowY:"scroll"}}>
+        <div className="main position-absolute" style={{backgroundColor:"#181818",height:"100vh",width:"100vw",overflowY:"scroll",overflowX:"hidden"}}>
          
                 {elem}
                 <SideBar/>
@@ -64,7 +64,7 @@ const About=()=>{
                                         <div className="container-venue position-relative d-flex flex-column" style={{width:"50%"}}>
                                             
                                             <p style={{color:"orange",fontFamily:"Poppins",textAlign:"right",paddingRight:"15%",paddingTop:"30%",fontWeight:"bold",fontSize:"1.5rem"}}>Venue</p>
-                                            <p style={{color:"white",fontFamily:"Poppins",textAlign:"right",paddingRight:"15%",fontWeight:"bold",fontSize:"1rem"}}>Lorem ipsum dolor sit amet consectetur adipisicing elit.Amet necessitatibus non porro alias, eius doloremque eveniet id deserunt<br/> voluptate cumque perspiciatis earum eos obcaecati tempore debitis expedita velit fugiat. Delectus?</p>
+                                            <p style={{color:"white",fontFamily:"Poppins",textAlign:"right",paddingRight:"15%",fontWeight:"bold",fontSize:"1rem"}}>MIT, Manipal</p>
                                             <img src={map} className="pb-3" align="right" height="100%" width="100%" style={{paddingRight:"10%"}}></img>
                                      
                     

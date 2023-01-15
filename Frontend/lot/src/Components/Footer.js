@@ -14,8 +14,8 @@ import instagram from '../images/insta.svg'
 const Footer=()=>{
     return(
 
-        <div className="footerarea d-flex flex-column m-0 py-0" style={{width:"100vw",height:"auto",backgroundColor:"#11071F"}}>
-                <div className="firstline d-flex flex-row justify-content-between p-2" style={{width:"100vw"}}>
+        <div className="footerarea d-flex flex-column m-0 py-0" style={{width:"100%",height:"auto",backgroundColor:"#11071F"}}>
+                <div className="firstline d-flex flex-row justify-content-between p-2" style={{width:"100%"}}>
 
                     <div className="image-text d-flex flex-row p-0 m-0">
 
@@ -25,7 +25,7 @@ const Footer=()=>{
                     </div>
  
                     
-                    <a href="" className="intagram p-2 my-0 float-end"><img className="instagram float-end" src={instagram}  style={{height:"50%",width:"auto"}}alt=""  /></a>
+                    <a href="" className="intagram p-2 my-0 float-end"><img className="instagram float-end" src={instagram}  style={{height:"40%",width:"auto"}}alt=""  /></a>
                 </div>
 
                 <div className="contact text-white d-flex px-3 py-0 my-0">

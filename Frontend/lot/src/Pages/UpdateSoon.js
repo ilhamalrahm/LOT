@@ -35,7 +35,7 @@ const UpdateSoon=()=>{
 
     return(
         //HTML code here(Use inline CSS and bootstrap)
-        <div className='main' style={{ margin: 0, padding: 0 ,backgroundColor: '#181818',width:"100vw",height:"100vh"}}>
+        <div className='main position-absolute' style={{ margin: 0, padding: 0 ,backgroundColor: '#181818',width:"100vw",height:"100vh",overflowY:"scroll",overflowX:"hidden"}}>
             <div className="main" style={{ backgroundColor: '#181818', display: 'grid', height: 750, gridTemplateColumns: '100%', gridTemplateRows: '7.84% 92.16%' }}>
 
             <div className="navb">
@@ -57,8 +57,9 @@ const UpdateSoon=()=>{
                 
 
             </div>
+            <Footer/>
         
-    </div >
+        </div >
 
 
     );

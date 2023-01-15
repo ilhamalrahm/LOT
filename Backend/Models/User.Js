@@ -22,6 +22,13 @@ const User = new Schema({
     },
     assigned:{
         type:String
+    },
+    paymentDone:{
+        type:Boolean,
+        default:false
+    },
+    fromMahe:{
+        type:Boolean
     }
 });
 

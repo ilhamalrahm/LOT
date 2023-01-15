@@ -23,13 +23,13 @@ function App() {
 
  
   return (
-    <div className="App">
+    <div className="App" style={{overflowX:"hidden",overflowY:'hidden'}}>
       <StateProvider>
         <Router>
           <Routes>
             <Route path="/signup" element={<SignUpPage/>}/>
             <Route path="/signin" element={<SignInPage/>}/>
-            <Route path="/landing" element={<Home/>}/>
+            <Route path="/" element={<Home/>}/>
             <Route path="/about" element={<About/>}/>
             <Route path="/profile" element={<Profile/>}/>
             <Route path="/itinerary" element={<UpdateSoon/>}/>

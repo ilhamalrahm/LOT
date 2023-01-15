@@ -65,7 +65,7 @@ const SignInPage=()=>{
     return(
         //HTML code here(Use inline CSS and bootstrap)
 
-        <div className='position-relative' style={{ margin: 0,overflowY:"scroll", padding: 0,backgroundColor: '#181818',height:"100vh",width:"100vw" }}>
+        <div className='position-relative' style={{ margin: 0, padding: 0,backgroundColor: '#181818',height:"100vh",width:"100vw",overflowY:"scroll",overflowX:"hidden" }}>
             <div className="bar">
             {elem}
 
