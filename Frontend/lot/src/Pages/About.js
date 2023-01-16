@@ -38,17 +38,17 @@ const About=()=>{
 
     return(
         //HTML code here(Use inline CSS and bootstrap)
-        <div className="main position-absolute" style={{backgroundColor:"#181818",height:"100vh",width:"100vw",overflowY:"scroll",overflowX:"hidden"}}>
+        <div className="main position-absolute" style={{backgroundColor:"#1E0B39",height:"100vh",width:"100vw",overflowY:"scroll",overflowX:"hidden"}}>
          
                 {elem}
                 <SideBar/>
 
-                <div className="containerpage d-flex flex-column" style={{backgroundColor:"#181818"}}>
+                <div className="containerpage d-flex flex-column" style={{backgroundColor:"#1E0B39"}}>
 
                         <div className="container position-relative">
-                            <p className="about p-3" style={{color:"white",fontFamily:"Poppins",fontSize:"2rem",fontWeight:"bold",textAlign:"center",paddingLeft:"20%"}}>ABOUT</p>
+                            <p className="about p-3" style={{color:"white",fontFamily:"Poppins",fontSize:"2rem",fontWeight:"bolder",textAlign:"center",paddingLeft:"20%"}}>ABOUT</p>
                             <div className="about-us">
-                                <p style={{color:"orange",fontFamily:"Poppins",textAlign:"left",paddingLeft:"10%",paddingTop:"5%",fontWeight:"bold",fontSize:"1.5rem"}}>About us</p>
+                                <p style={{color:"orange",fontFamily:"Poppins",textAlign:"left",paddingLeft:"10%",paddingTop:"5%",fontWeight:"bold",fontSize:"1.5rem",fontWeight:"bold"}}>About us</p>
                                 <p style={{color:"white",fontFamily:"Poppins",textAlign:"left",paddingLeft:"10%",fontWeight:"bold",fontSize:"1rem"}}>After the glamorous success of Manipal MUN 2022, the Leaders of Tomorrow are back with yet another edition of Manipal's largest MUN conference, with riveting changes and challenges to make the experience even better.With exciting agendas and challenging committees, this conference is guaranteed to provide an enthralling simulation of the inner workings of international diplomacy and is a perfect avenue through which any participant, despite their experience, can truly feel the vicissitudes and beauty of geopolitics.We proudly reminisce about the success of our previous endeavours, wherein both students and advisors left the conference with a greater understanding of international relations and organisation. We strive to aim higher with each subsequent conference and ameliorate its success. ManipalMUN eagerly awaits the talented participants who will fill its committees and chambers and strives to uphold its time-tested legacy of being one of the most successful and prestigious conferences ever</p>
 
                             </div>

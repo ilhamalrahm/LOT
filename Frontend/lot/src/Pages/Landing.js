@@ -6,6 +6,7 @@ import { useNavigate } from "react-router-dom";
 import bg from '../images/bg.png';
 import logo from '../images/logo.png';
 import mun from '../images/mun.png';
+import man from '../images/man.jpg'
 import date from '../images/date.png';
 import Navbar from '../Components/Navbar';
 import instagram from '../images/insta.svg'
@@ -79,7 +80,7 @@ const Home=()=>{
 
     return(
         //HTML code here(Use inline CSS and bootstrap)
-        <div className="main position-absolute" style={{height:"100vh",width:"100vw",overflowY:"scroll",overflowX:"hidden", backgroundColor:"#181818"}}>
+        <div className="main position-absolute" style={{height:"100vh",backgroundImage: `url(${man})`,backgroundPosition:"center",backgroundSize:"cover" ,backgroundRepeat:"no repeat",width:"100vw",overflowY:"scroll",overflowX:"hidden", backgroundColor:"#181818"}}>
             
             {elem}
             <SideBar/>
@@ -96,7 +97,7 @@ const Home=()=>{
 
 
                 <div>
-                    <button onClick={ToRegister} style={{border:"none",color:"white",backgroundColor:"indigo",fontSize:"1.5rem"}}>Register Now</button>
+                    <button className='px-3' onClick={ToRegister} style={{border:"none",color:"white",backgroundColor:"indigo",fontSize:"1.5rem",borderRadius:"5px"}}>Register Now</button>
                 </div>
                 {/* <div className='m-2'>
                     <button onClick={ToLogin} style={{border:"none",color:"white",backgroundColor:"indigo",fontSize:"1.5rem"}}>Sign in</button>

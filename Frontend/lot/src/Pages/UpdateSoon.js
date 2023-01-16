@@ -35,8 +35,8 @@ const UpdateSoon=()=>{
 
     return(
         //HTML code here(Use inline CSS and bootstrap)
-        <div className='main position-absolute' style={{ margin: 0, padding: 0 ,backgroundColor: '#181818',width:"100vw",height:"100vh",overflowY:"scroll",overflowX:"hidden"}}>
-            <div className="main" style={{ backgroundColor: '#181818', display: 'grid', height: 750, gridTemplateColumns: '100%', gridTemplateRows: '7.84% 92.16%' }}>
+        <div className='main position-absolute' style={{ margin: 0, padding: 0 ,backgroundColor: '#1E0B39',width:"100vw",height:"100vh",overflowY:"scroll",overflowX:"hidden"}}>
+            <div className="main" style={{ backgroundColor: '#1E0B39"', display: 'grid', height: 750, gridTemplateColumns: '100%', gridTemplateRows: '7.84% 92.16%' }}>
 
             <div className="navb">
             {elem}
@@ -45,9 +45,9 @@ const UpdateSoon=()=>{
             </div>
                 
 
-                <div className="body d-flex flex-column" style={{ padding: '5% 6.94% 6.94% 6.94%' }}>
+                <div className="body d-flex flex-column justify-content-center" style={{ padding: '5% 6.94% 6.94% 6.94%' }}>
 
-                    <h1 style={{ color: 'white', fontFamily: 'Plus Jakarta Sans', fontStyle: 'normal', fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', letterSpacing: '0.02em',padding:"5%" }}>Page will be Updated Soon!</h1>
+                    <h1 style={{ color: 'white', fontFamily: 'Poppins', fontStyle: 'normal', fontWeight: 700, display: 'flex', alignItems: 'center', justifyContent: 'center', letterSpacing: '0.02em',padding:"5%" }}>Page will be Updated Soon!</h1>
 
 
                  

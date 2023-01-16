@@ -75,25 +75,25 @@ const SignInPage=()=>{
 
         <div className="c position-relative d-flex justify-content-start w-100 h-100" >
 
-            <div className='details position-relative p-5' style={{ backgroundColor: 'white', fontFamily: "Poppins",height:"100%", width:"60%"  }}>
-                <h1 className='text-bold' style={{ color: 'black', padding: "5% 14% 0% 14%", }}>Log in</h1>
+            <div className='details position-relative p-5' style={{ backgroundColor: '#1E0B39', fontFamily: "Poppins",height:"100%", width:"100%"  }}>
+                <h1 className='text-bold' style={{ color: 'white', padding: "5% 14% 0% 14%",fontWeight:"bold" }}>Log in</h1>
                 <p style={{color:"gray"}} className="welcome">Welcome, please Log in if you have already registered!</p>
                 <div className="details " style={{ color: '#FFB703', textAlign: 'left' }}>
                     <form action="noaction.php">
                   
                         <div className="formgroup2 position-relative" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '5%' }}>
                             Email ID <br></br>
-                            <input type="email" id="email" className="email p-2" style={{fontSize:"1rem", width: '100%'}}/>
+                            <input type="email" id="email" className="email p-2" style={{fontSize:"1rem", width: '100%',borderRadius:"10px"}}/>
                         </div>
                 
                         <div className="formgroup4" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '3%' }}>
                             Password <br></br>
-                            <input type="password" id="password" className="password p-2" style={{fontSize:"1rem", width: '100%'}}/>
+                            <input type="password" id="password" className="password p-2" style={{fontSize:"1rem", width: '100%',borderRadius:"10px"}}/>
                         </div>
                       
                         <div className="formgroup6 d-flex justify-content-center" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '3%' }}>
                             
-                            <input className="btn btn-primary" onClick={HandleSubmit} type="button" value="Login" style={{backgroundColor:"#1E0B39"}}/>
+                            <input className="btn btn-primary" onClick={HandleSubmit} type="button" value="Login" style={{backgroundColor:"#11071F"}}/>
                         </div>
                         
                     </form>

@@ -37,38 +37,38 @@ const Committees=()=>{
 
     return(
         //HTML code here(Use inline CSS and bootstrap)
-        <div className="main position-absolute" style={{backgroundColor:"#181818",width:"100vw",height:"100vh",overflowY:"scroll",overflowX:"hidden"}}>
+        <div className="main position-absolute" style={{backgroundColor:"#1E0B39",width:"100vw",height:"100vh",overflowY:"scroll",overflowX:"hidden"}}>
 
             {elem}
             <SideBar/>
 
             <div className="mainarea d-flex flex-wrap flex-row align-items-center justify-content-around py-3">
                 <div className="img_contain m-2 d-flex justify-content-center">
-                    <Card href="this is the link" h="40%" w="40%" im={india} name="ths is the name" org="Description: Freeze date 30th March 1977" hash="Coming Soon!" style={{backgroundColor:"#1E0B39", width:"22rem",minHeight:"20rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
+                    <Card href="this is the link" h="40%" w="40%" im={india} name="ths is the name" org="Description: Freeze date 30th March 1977" hash="Coming Soon!" style={{backgroundColor:"#11071F", width:"22rem",minHeight:"20rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
                 </div>
 
                 <div className="img_contain m-2 d-flex justify-content-center">
-                    <Card href="this is the link" h="20%" w="20%" im={UN} name="ths is the name" org="Description: Discussion and Deliberation role and legality of private military contractors in conflict regions." hash="Coming soon" style={{backgroundColor:"#1E0B39", width:"22rem",minHeight:"20rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
-                </div>
-
-
-                <div className="img_contain m-2 d-flex justify-content-center">
-                    <Card href="this is the link" h="40%" w="40%" im={UNY} name="ths is the name" org="Description: Protection of civilians in conflict and non-conflict areas with particular emphasis on women and children" hash="Coming Soon!" style={{backgroundColor:"#1E0B39", width:"20rem",minHeight:"20rem",maxHeight:"30rem", borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
+                    <Card href="this is the link" h="20%" w="20%" im={UN} name="ths is the name" org="Description: Discussion and Deliberation role and legality of private military contractors in conflict regions." hash="Coming soon" style={{backgroundColor:"#11071F", width:"22rem",minHeight:"20rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
                 </div>
 
 
                 <div className="img_contain m-2 d-flex justify-content-center">
-                    <Card href="this is the link" h="40%" w="40%" im={Crisis} name="ths is the name" org="Description: Crisis Committee" hash="Coming Soon!" style={{backgroundColor:"#1E0B39", width:"22rem",minHeight:"20rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
+                    <Card href="this is the link" h="40%" w="40%" im={UNY} name="ths is the name" org="Description: Protection of civilians in conflict and non-conflict areas with particular emphasis on women and children" hash="Coming Soon!" style={{backgroundColor:"#11071F", width:"20rem",minHeight:"20rem",maxHeight:"30rem", borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
                 </div>
 
 
                 <div className="img_contain m-2 d-flex justify-content-center">
-                    <Card href="this is the link" h="40%" w="40%" im={Social} name="ths is the name" org="Description: Discussion on legalities and development of technologies with implications in space militarization" hash="Coming Soon!" style={{backgroundColor:"#1E0B39", width:"20rem",minHeight:"22rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
+                    <Card href="this is the link" h="40%" w="40%" im={Crisis} name="ths is the name" org="Description: Crisis Committee" hash="Coming Soon!" style={{backgroundColor:"#11071F", width:"22rem",minHeight:"20rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
                 </div>
 
 
                 <div className="img_contain m-2 d-flex justify-content-center">
-                    <Card href="this is the link" h="40%" w="40%" im={Security} name="ths is the name" org="Description: Discuss on ways to counter funding of extremist and non state actors" hash="Coming Soon!" style={{backgroundColor:"#1E0B39", width:"20rem",minHeight:"22rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
+                    <Card href="this is the link" h="40%" w="40%" im={Social} name="ths is the name" org="Description: Discussion on legalities and development of technologies with implications in space militarization" hash="Coming Soon!" style={{backgroundColor:"#11071F", width:"20rem",minHeight:"22rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
+                </div>
+
+
+                <div className="img_contain m-2 d-flex justify-content-center">
+                    <Card href="this is the link" h="40%" w="40%" im={Security} name="ths is the name" org="Description: Discuss on ways to counter funding of extremist and non state actors" hash="Coming Soon!" style={{backgroundColor:"#11071F", width:"20rem",minHeight:"22rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
                 </div>
 
 

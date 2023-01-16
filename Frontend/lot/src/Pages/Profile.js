@@ -67,7 +67,7 @@ const Profile = () => {
 
 
     return (
-        <div className='position-relative' style={{ margin: 0,overflow:"scroll", padding: 0,backgroundColor: '#181818',height:"100vh",width:"100vw",overflowY:"scroll",overflowX:"hidden" }}>
+        <div className='position-relative' style={{ margin: 0,overflow:"scroll", padding: 0,backgroundColor: '#1E0B39',height:"100vh",width:"100vw",overflowY:"scroll",overflowX:"hidden" }}>
                 <div className="bar">
                 {elem}
 
@@ -82,7 +82,7 @@ const Profile = () => {
                 </div> */}
                 
 
-                <div className='details position-relative' style={{ backgroundColor: 'black', fontFamily: "Poppins",height:"100%", width:"60%" ,borderRadius:"30px" }}>
+                <div className='details position-relative' style={{ backgroundColor: '#11071F', fontFamily: "Poppins",height:"100%", width:"70%" ,borderRadius:"30px" }}>
                 <input className="btn btn-primary float-end" onClick={Logout} type="button" value="Logout" style={{backgroundColor:"#1E0B39",borderColor:"black"}}/>
                     <h1 style={{ color: '#FFFFFF', padding: "5% 14% 0% 14%", }}>Profile</h1>
                     <div className="details text-white" style={{ color: '#FFB703', textAlign: 'left' }}>

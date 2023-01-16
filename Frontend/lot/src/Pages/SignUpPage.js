@@ -91,7 +91,7 @@ const SignUpPage=()=>{
 
         // </div>
 
-        <div className='position-relative' style={{ margin: 0, padding: 0,backgroundColor: '#181818',height:"100vh",width:"100vw",overflowY:"scroll",overflowX:"hidden" }}>
+        <div className='position-relative' style={{ margin: 0, padding: 0,backgroundColor: '#1E0B39',height:"100vh",width:"100vw",overflowY:"scroll",overflowX:"hidden" }}>
             <div className="bar">
             {elem}
 
@@ -101,30 +101,30 @@ const SignUpPage=()=>{
 
         <div className="c position-relative d-flex justify-content-end w-100 h-100" >
 
-            <div className='details position-relative' style={{ backgroundColor: 'white', fontFamily: "Poppins",height:"100%", width:"60%"  }}>
-                <h1 className='text-bold' style={{ color: 'black', padding: "5% 14% 0% 14%", }}>Register</h1>
+            <div className='details position-relative' style={{ backgroundColor: '#1E0B39', fontFamily: "Poppins",height:"100%", width:"100%"  }}>
+                <h1 className='text-bold' style={{ color: 'white', padding: "5% 14% 0% 14%",fontWeight:"bold" }}>Register</h1>
                 <p style={{color:"gray"}} className="welcome">Welcome, please enter your details!</p>
                 <div className="details " style={{ color: '#FFB703', textAlign: 'left' }}>
                     <form action="noaction.php">
                         <div className="formgroup1" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '5%' }}>
                             <span style={{ padding: '0% 0% 5% 0%' }}>Name</span> <br></br>
-                            <input type="text" id="name" className="name p-2" style={{fontSize:"1rem", width: '100%'}}/>
+                            <input type="text" id="name" className="name p-2" style={{fontSize:"1rem", width: '100%',borderRadius:"10px"}}/>
                         </div>
-                        <div className="formgroup2 position-relative" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
+                        <div className="formgroup2 position-relative" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%', }}>
                             Email ID <br></br>
-                            <input type="email" id="email" className="email p-2" style={{fontSize:"1rem", width: '100%'}}/>
+                            <input type="email" id="email" className="email p-2" style={{fontSize:"1rem", width: '100%',borderRadius:"10px"}}/>
                         </div>
                         <div className="formgroup3" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
                             College <br></br>
-                            <input type="text" id="college" className="college p-2" style={{fontSize:"1rem", width: '100%'}}/>
+                            <input type="text" id="college" className="college p-2" style={{fontSize:"1rem", width: '100%',borderRadius:"10px"}}/>
                         </div>
                         <div className="formgroup4" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
                             Password <br></br>
-                            <input type="password" id="password" className="password p-2" style={{fontSize:"1rem", width: '100%'}}/>
+                            <input type="password" id="password" className="password p-2" style={{fontSize:"1rem", width: '100%',borderRadius:"10px"}}/>
                         </div>
                         <div className="formgroup5" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
                             Confirm Password <br></br>
-                            <input type="password" id="confirm" className="confirm p-2" style={{fontSize:"1rem", width: '100%'}}/>
+                            <input type="password" id="confirm" className="confirm p-2" style={{fontSize:"1rem", width: '100%',borderRadius:"10px"}}/>
                         </div>
                         <div className="formgroup6 d-flex justify-content-center" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
                             <p className="mahe px-1 m-0">Are you from Mahe?</p>
@@ -132,7 +132,7 @@ const SignUpPage=()=>{
                         </div>
                         <div className="formgroup7 d-flex justify-content-center" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
                             
-                            <input className="btn btn-primary" onClick={HandleSubmit} type="button" value="Register" style={{backgroundColor:"#1E0B39"}}/>
+                            <input className="btn btn-primary" onClick={HandleSubmit} type="button" value="Register" style={{backgroundColor:"#11071F"}}/>
                             
                         </div>
                         
