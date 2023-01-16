@@ -47,20 +47,27 @@ const Profile = () => {
     
 
     useEffect(()=>{
+        if(context.token=='' || context.email=='')
+        {
+            navigate('/signin')
+        }
+        else
+        {
         console.log(context)
         document.getElementById("profile").style.textDecoration="underline";
         document.getElementById("profile").style.textDecorationColor= "#FBBC05"
-        // dispatch({type:"set",payload:userdetails})
-        console.log(context)
+        }
         
-        axios.get("/api/user/home").then((res)=>{
-            console.log(res.status)
- 
+        // dispatch({type:"set",payload:userdetails})
+  
+        
+        // axios.get("/api/user/home").then((res)=>{
+        //     console.log(res.status)
 
-        }).catch((error)=>{
-            console.log(error)
-            navigate('/signin');
-        })
+        // }).catch((error)=>{
+        //     console.log(error)
+        //     navigate('/signin');
+        // })
 
     },[])
 

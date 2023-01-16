@@ -56,9 +56,18 @@ const SignInPage=()=>{
             localStorage.setItem('assigned',res.data.context.assigned)
             var newstate=dispatch({type:"set",payload:res.data.context})
 
-            navigate("/profile");
+            // navigate("/profile");
             
             
+        }).then(()=>{
+            axios.get("/api/user/home").then((res)=>{
+                console.log(res.status)
+                navigate("/profile");
+    
+            }).catch((error)=>{
+                console.log(error)
+                navigate('/signin');
+            })
         })
     }
 
