@@ -44,31 +44,31 @@ const Committees=()=>{
 
             <div className="mainarea d-flex flex-wrap flex-row align-items-center justify-content-around py-3">
                 <div className="img_contain m-2 d-flex justify-content-center">
-                    <Card href="this is the link" h="40%" w="40%" im={india} name="ths is the name" org="Description: Freeze date 30th March 1977" hash="Coming Soon!" style={{backgroundColor:"#11071F", width:"22rem",minHeight:"20rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
+                    <Card href="this is the link" h="40%" w="40%" im={india} name="ths is the name" desc="Description: Freeze date 30th March 1977" agenda="Coming Soon!" style={{backgroundColor:"#11071F", width:"22rem",minHeight:"20rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
                 </div>
 
                 <div className="img_contain m-2 d-flex justify-content-center">
-                    <Card href="this is the link" h="20%" w="20%" im={UN} name="ths is the name" org="Description: Discussion and Deliberation role and legality of private military contractors in conflict regions." hash="Coming soon" style={{backgroundColor:"#11071F", width:"22rem",minHeight:"20rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
-                </div>
-
-
-                <div className="img_contain m-2 d-flex justify-content-center">
-                    <Card href="this is the link" h="40%" w="40%" im={UNY} name="ths is the name" org="Description: Protection of civilians in conflict and non-conflict areas with particular emphasis on women and children" hash="Coming Soon!" style={{backgroundColor:"#11071F", width:"20rem",minHeight:"20rem",maxHeight:"30rem", borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
+                    <Card href="this is the link" h="20%" w="20%" im={UN} name="ths is the name" desc="Description: Discussion and Deliberation role and legality of private military contractors in conflict regions." agenda="Coming soon" style={{backgroundColor:"#11071F", width:"22rem",minHeight:"20rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
                 </div>
 
 
                 <div className="img_contain m-2 d-flex justify-content-center">
-                    <Card href="this is the link" h="40%" w="40%" im={Crisis} name="ths is the name" org="Description: Crisis Committee" hash="Coming Soon!" style={{backgroundColor:"#11071F", width:"22rem",minHeight:"20rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
+                    <Card href="this is the link" h="40%" w="40%" im={UNY} name="ths is the name" desc="Description: Protection of civilians in conflict and non-conflict areas with particular emphasis on women and children" agenda="Coming Soon!" style={{backgroundColor:"#11071F", width:"20rem",minHeight:"20rem",maxHeight:"30rem", borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
                 </div>
 
 
                 <div className="img_contain m-2 d-flex justify-content-center">
-                    <Card href="this is the link" h="40%" w="40%" im={Social} name="ths is the name" org="Description: Discussion on legalities and development of technologies with implications in space militarization" hash="Coming Soon!" style={{backgroundColor:"#11071F", width:"20rem",minHeight:"22rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
+                    <Card href="this is the link" h="40%" w="40%" im={Crisis} name="ths is the name" desc="Description: Crisis Committee" agenda="Coming Soon!" style={{backgroundColor:"#11071F", width:"22rem",minHeight:"20rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
                 </div>
 
 
                 <div className="img_contain m-2 d-flex justify-content-center">
-                    <Card href="this is the link" h="40%" w="40%" im={Security} name="ths is the name" org="Description: Discuss on ways to counter funding of extremist and non state actors" hash="Coming Soon!" style={{backgroundColor:"#11071F", width:"20rem",minHeight:"22rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
+                    <Card href="this is the link" h="40%" w="40%" im={Social} name="ths is the name" desc="Description: Discussion on legalities and development of technologies with implications in space militarization" agenda="Coming Soon!" style={{backgroundColor:"#11071F", width:"20rem",minHeight:"22rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
+                </div>
+
+
+                <div className="img_contain m-2 d-flex justify-content-center">
+                    <Card href="this is the link" h="40%" w="40%" im={Security} name="ths is the name" desc="Description: Discuss on ways to counter funding of extremist and non state actors" agenda="Coming Soon!" style={{backgroundColor:"#11071F", width:"20rem",minHeight:"22rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
                 </div>
 
 
@@ -89,7 +89,7 @@ const Committees=()=>{
 
 const Card=(props)=>{
     console.log(props);
-    const {name,href,hash,org,im,h,w}=props;
+    const {name,href,agenda,desc,im,h,w}=props;
     console.log(name);
     
     const [show,setShow]=useState(true);
@@ -98,10 +98,10 @@ const Card=(props)=>{
       setShow(!show);
       if(show==true)
       {
-        document.getElementById(org).style.fontSize="1.0rem";
+        document.getElementById(desc).style.fontSize="1.0rem";
       }
       else{
-        document.getElementById(org).style.fontSize="0.0rem";
+        document.getElementById(desc).style.fontSize="0.0rem";
       }
 
     }
@@ -114,13 +114,13 @@ const Card=(props)=>{
 
     <div className="textt d-flex flex-column p-2" style={{width:"70%"}}>
       
-         <p className="pdfname text-break text-white" style={{fontSize:"1.0rem"}}>{org}</p>
+         <p className="pdfname text-break text-white" style={{fontSize:"1.0rem"}}>{desc}</p>
  
        
         <div className="btn show signin text-white bg-dark" onClick={Show} style={{borderRadius:"15px",fontSize:"1.0rem",backgroundColor:"black",borderColor:"#FBBC05"}}>Show Agenda</div>
        
 
-        <p className="pdfname hashcode text-white text-break py-2" name="hashcode" id={org} style={{fontSize:"0.0rem" ,visibility:"visible",transition:"0.5s"}}>{hash}</p>
+        <p className="pdfname hashcode text-white text-break py-2" name="hashcode" id={desc} style={{fontSize:"0.0rem" ,visibility:"visible",transition:"0.5s"}}>{agenda}</p>
             
       
        

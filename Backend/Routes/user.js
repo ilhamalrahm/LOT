@@ -27,7 +27,9 @@ router.post("/signUp",async (req, res) => {
             committee:"",
             assigned:"",
             paymentDone:false,
-            fromMahe:req.body.fromMahe
+            fromMahe:req.body.fromMahe,
+            committeePref:req.body.committeePref,
+            countryPref:req.body.countryPref
             
        
         }
@@ -118,7 +120,7 @@ router.post("/signIn",async (req, res) => {
                 httpOnly:true,
                 secure:true,
                 sameSite:"None",
-                // domain:"https://verichain.live"
+                
             }).status(200).json({success:true,data:"Login successful!",context:userdetails});
             // res.status(200).send({ success: true, message: "Login successful",userdetails:userdetails});
         } catch (error) {
@@ -143,7 +145,7 @@ router.get("/logout",(req,res)=>{
 router.post("/home",authenticate,async (req, res) => {
     // checks for validation result
     console.log("Home is here")
-    res.status(200).json({message:"Home successful"});
+    // res.status(200).json({message:"Home successful"});
 });
 
 

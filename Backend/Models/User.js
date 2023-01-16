@@ -29,6 +29,12 @@ const User = new Schema({
     },
     fromMahe:{
         type:Boolean
+    },
+    committeePref:{
+        type:String
+    },
+    countryPref:{
+        type:String
     }
 });
 

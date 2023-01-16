@@ -9,6 +9,9 @@ import SideBar from '../Components/Sidebar';
 import { useMediaQuery } from 'react-responsive';
 import Navmob from '../Components/Navmob';
 const SignInPage=()=>{
+
+    const [mes,setMes]=useState("");
+
     const isDesktopOrLaptop = useMediaQuery({
         query: '(min-width: 840px)'
       });
@@ -49,6 +52,15 @@ const SignInPage=()=>{
      
 
         axios.post("/api/user/signIn",{email,password}).then((res)=>{
+            if(res.status==200)
+            {
+                document.getElementById('mes').style.color="green";
+                setMes("Login Successful!");
+            }
+            else{
+                document.getElementById('mes').style.color="red";
+                setMes("Invalid Email or Password!");
+            }
             console.log("Signin res " +res.data.context.college)
             localStorage.setItem('email',res.data.context.email)
             localStorage.setItem('name',res.data.context.name)
@@ -64,6 +76,9 @@ const SignInPage=()=>{
             
         }).then(()=>{
             navigate('/profile')
+        }).catch((err)=>{
+            document.getElementById('mes').style.color="red";
+            setMes("Invalid Email or Password!");
         })
 
      
@@ -106,6 +121,7 @@ const SignInPage=()=>{
                     </form>
                     
                 </div>
+                <p style={{color:"gray"}} id='mes' className="welcome pt-1">{mes}</p>
                 <p style={{color:"gray"}} className="welcome">Not Registered? Go to <a href="/signup" className="register">Register</a></p>
             </div>
 

@@ -55,6 +55,8 @@ const SignUpPage=()=>{
        var name=document.getElementById('name').value;
        var college=document.getElementById('college').value;
        var fromMahe=document.getElementById('fromMahe').checked;
+       var committeePref=document.getElementById('committeePref').value;
+       var countryPref=document.getElementById('countryPref').value;
        console.log(fromMahe + " hi ");
 
        if(password!=confirm)
@@ -63,7 +65,7 @@ const SignUpPage=()=>{
        }
        else{
 
-        axios.post("/api/user/signUp",{email,password,name,college,fromMahe}).then(res=>{
+        axios.post("/api/user/signUp",{email,password,name,college,fromMahe,committeePref,countryPref}).then(res=>{
             console.log(res.data);
             navigate("/signin");
         }).catch((err)=>{
@@ -102,11 +104,11 @@ const SignUpPage=()=>{
         <div className="c position-relative d-flex justify-content-end w-100 h-100" >
 
             <div className='details position-relative' style={{ backgroundColor: '#1E0B39', fontFamily: "Poppins",height:"100%", width:"100%"  }}>
-                <h1 className='text-bold' style={{ color: 'white', padding: "5% 14% 0% 14%",fontWeight:"bold" }}>Register</h1>
+                <h1 className='text-bold' style={{ color: 'white', padding: "1% 14% 0% 14%",fontWeight:"bold" }}>Register</h1>
                 <p style={{color:"gray"}} className="welcome">Welcome, please enter your details!</p>
                 <div className="details " style={{ color: '#FFB703', textAlign: 'left' }}>
                     <form action="noaction.php">
-                        <div className="formgroup1" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '5%' }}>
+                        <div className="formgroup1" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
                             <span style={{ padding: '0% 0% 5% 0%' }}>Name</span> <br></br>
                             <input type="text" id="name" className="name p-2" style={{fontSize:"1rem", width: '100%',borderRadius:"10px"}}/>
                         </div>
@@ -117,6 +119,14 @@ const SignUpPage=()=>{
                         <div className="formgroup3" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
                             College <br></br>
                             <input type="text" id="college" className="college p-2" style={{fontSize:"1rem", width: '100%',borderRadius:"10px"}}/>
+                        </div>
+                        <div className="formgroup8" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
+                            Country Preference <br></br>
+                            <input type="text" id="countryPref" className="confirm p-2" style={{fontSize:"1rem", width: '100%',borderRadius:"10px"}}/>
+                        </div>
+                        <div className="formgroup9" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
+                            Committee Preference<br></br>
+                            <input type="text" id="committeePref" className="confirm p-2" style={{fontSize:"1rem", width: '100%',borderRadius:"10px"}}/>
                         </div>
                         <div className="formgroup4" style={{ paddingLeft: '20%', paddingRight: '20%', paddingTop: '1%' }}>
                             Password <br></br>
