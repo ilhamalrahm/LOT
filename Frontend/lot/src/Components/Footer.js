@@ -41,7 +41,7 @@ const Footer=()=>{
 
                         <div className="links d-flex flex-row justify-content-between px-3 m-0">
                             <div className="social p-0 m-0">
-                                <a href="" className="intagram  py-0 m-0 "><img className="instagram float m-0 py-0 px-1" src={instagram}  style={{height:"0.7rem",width:"auto"}}alt=""  /></a>
+                                <a href="https://instagram.com/imtpt?igshid=YmMyMTA2M2Y=" className="intagram  py-0 m-0 "><img className="instagram float m-0 py-0 px-1" src={instagram}  style={{height:"0.7rem",width:"auto"}}alt=""  /></a>
                                 <a href="" className="intagram py-0 m-0 "><img className="instagram float m-0 py-0 px-1" src={linkedin}  style={{height:"0.7rem",width:"auto"}}alt=""  /></a>
                             </div>
                             <div className="phone">
@@ -59,8 +59,8 @@ const Footer=()=>{
 
                         <div className="links d-flex flex-row justify-content-between px-3 m-0">
                             <div className="social p-0 m-0">
-                                <a href="" className="intagram  py-0 m-0 "><img className="instagram float m-0 py-0 px-1" src={instagram}  style={{height:"0.7rem",width:"auto"}}alt=""  /></a>
-                                <a href="" className="intagram py-0 m-0 "><img className="instagram float m-0 py-0 px-1" src={linkedin}  style={{height:"0.7rem",width:"auto"}}alt=""  /></a>
+                                <a href="https://www.instagram.com/daksh.png/" className="intagram  py-0 m-0 "><img className="instagram float m-0 py-0 px-1" src={instagram}  style={{height:"0.7rem",width:"auto"}}alt=""  /></a>
+                                <a href="https://www.linkedin.com/in/daksh-soni-069420/" className="intagram py-0 m-0 "><img className="instagram float m-0 py-0 px-1" src={linkedin}  style={{height:"0.7rem",width:"auto"}}alt=""  /></a>
                             </div>
                             <div className="phone">
                                 <p className="phone py-2" style={{fontSize:"0.6rem"}}>+91 86181 64598</p>
@@ -77,8 +77,8 @@ const Footer=()=>{
 
                         <div className="links d-flex flex-row justify-content-between px-3 m-0">
                             <div className="social p-0 m-0">
-                                <a href="" className="intagram  py-0 m-0 "><img className="instagram float m-0 py-0 px-1" src={instagram}  style={{height:"0.7rem",width:"auto"}}alt=""  /></a>
-                                <a href="" className="intagram py-0 m-0 "><img className="instagram float m-0 py-0 px-1" src={linkedin}  style={{height:"0.7rem",width:"auto"}}alt=""  /></a>
+                                <a href="https://instagram.com/i.deepthii?igshid=YWJhMjlhZTc=" className="intagram  py-0 m-0 "><img className="instagram float m-0 py-0 px-1" src={instagram}  style={{height:"0.7rem",width:"auto"}}alt=""  /></a>
+                                <a href="https://www.linkedin.com/in/deepthi-p-b8ab171b5" className="intagram py-0 m-0 "><img className="instagram float m-0 py-0 px-1" src={linkedin}  style={{height:"0.7rem",width:"auto"}}alt=""  /></a>
                             </div>
                             <div className="phone">
                                 <p className="phone py-2" style={{fontSize:"0.6rem"}}>+91 99729 03171</p>
