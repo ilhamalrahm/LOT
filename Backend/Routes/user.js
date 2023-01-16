@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
-const User = require('../Models/User');
 const authenticate=require('../Middleware/Authenticate')
+const User = require('../Models/User');
 
 
 // To Sign Up
