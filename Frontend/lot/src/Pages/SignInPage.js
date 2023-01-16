@@ -23,6 +23,7 @@ const SignInPage=()=>{
       }
 
     const navigate = useNavigate();
+    var context=useTheState();
     const dispatch=useStateDispatch();
 
     var userdetails={
@@ -42,6 +43,7 @@ const SignInPage=()=>{
     },[])
 
     const HandleSubmit=()=>{
+        
        var email=document.getElementById('email').value;
         var password=document.getElementById('password').value;
      
@@ -54,21 +56,17 @@ const SignInPage=()=>{
             localStorage.setItem('college',res.data.context.college)
             localStorage.setItem('committee',res.data.context.committee)
             localStorage.setItem('assigned',res.data.context.assigned)
-            var newstate=dispatch({type:"set",payload:res.data.context})
+            dispatch({type:"set",payload:res.data.context})
+            console.log("signin context token in first : " + context.token)
 
             // navigate("/profile");
             
             
         }).then(()=>{
-            axios.get("/api/user/home").then((res)=>{
-                console.log(res.status)
-                navigate("/profile");
-    
-            }).catch((error)=>{
-                console.log(error)
-                navigate('/signin');
-            })
+            navigate('/profile')
         })
+
+     
     }
 
     return(

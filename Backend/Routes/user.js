@@ -140,7 +140,7 @@ router.get("/logout",(req,res)=>{
 );
 
 
-router.get("/home",authenticate,async (req, res) => {
+router.post("/home",authenticate,async (req, res) => {
     // checks for validation result
     console.log("Home is here")
     res.status(200).json({message:"Home successful"});

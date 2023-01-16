@@ -56,18 +56,20 @@ const Profile = () => {
         console.log(context)
         document.getElementById("profile").style.textDecoration="underline";
         document.getElementById("profile").style.textDecorationColor= "#FBBC05"
+        var token=context.token;
+
+        
+        axios.post("/api/user/home",{token:token}).then((res)=>{
+            console.log(res.status)
+
+        }).catch((error)=>{
+            console.log(error)
+            navigate('/signin');
+        })
         }
         
         // dispatch({type:"set",payload:userdetails})
   
-        
-        // axios.get("/api/user/home").then((res)=>{
-        //     console.log(res.status)
-
-        // }).catch((error)=>{
-        //     console.log(error)
-        //     navigate('/signin');
-        // })
 
     },[])
 

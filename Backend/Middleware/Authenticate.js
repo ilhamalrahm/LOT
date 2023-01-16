@@ -5,7 +5,7 @@ nconf.argv().env().file({ file: 'utils/config.json' });
 
 module.exports = function (req, res, next) {
   // get token from the header
-  const token = req.cookies.jwt //req.header('token');
+  const token = req.body.token; //req.header('token');
 
   console.log(token)
 
