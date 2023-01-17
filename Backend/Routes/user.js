@@ -29,7 +29,8 @@ router.post("/signUp",async (req, res) => {
             paymentDone:false,
             fromMahe:req.body.fromMahe,
             committeePref:req.body.committeePref,
-            countryPref:req.body.countryPref
+            countryPref:req.body.countryPref,
+            phone:req.body.phone
             
        
         }
@@ -49,11 +50,11 @@ router.post("/signUp",async (req, res) => {
                 res.setHeader('x-auth-token', token);
                 res.status(200).send({ message: "Sign up successful" });
             }).catch((err) => {
-                res.status(403).json({ errors: [err] });
+                res.status(403).json({ errors: [err],data:"An error occurred!" });
                 console.log(err)
             })    
         } catch (err) {
-            res.status(500).send({ error: 'Server error' });
+            res.status(500).send({ error: 'Server error',data:"Server error" });
         }
 
     }

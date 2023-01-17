@@ -25,6 +25,30 @@ const SignInPage=()=>{
         elem=<Navbar/>
       }
 
+      const checkEmptyFields = (formdata) => {
+        for (let i in formdata)
+        {
+            console.log(i + " this is i ")
+            console.log(formdata[i]," this is formdata[i]")
+            if(formdata[i]=="")
+            {
+                console.log("problem: "+i+" "+formdata[i])
+                document.getElementById('mes').style.color="red";
+                
+                setMes('Fields Cannot be Empty!')
+
+                return true;
+            }
+           
+        }
+
+        return false
+       
+
+       
+
+    }
+
     const navigate = useNavigate();
     var context=useTheState();
     const dispatch=useStateDispatch();
@@ -49,37 +73,48 @@ const SignInPage=()=>{
         
        var email=document.getElementById('email').value;
         var password=document.getElementById('password').value;
-     
+        var formdata={
+            email:email,
+            password:password
+        }
+        document.getElementById('mes').style.color="blue";
+        setMes('Submitting ...')
 
-        axios.post("/api/user/signIn",{email,password}).then((res)=>{
-            if(res.status==200)
-            {
-                document.getElementById('mes').style.color="green";
-                setMes("Login Successful!");
-            }
-            else{
+        if(!checkEmptyFields(formdata))
+        {
+            axios.post("/api/user/signIn",formdata).then((res)=>{
+                if(res.status==200)
+                {
+                    document.getElementById('mes').style.color="green";
+                    setMes("Login Successful!");
+                }
+                else{
+                    document.getElementById('mes').style.color="red";
+                    setMes("Invalid Email or Password!");
+                }
+                console.log("Signin res " +res.data.context.college)
+                localStorage.setItem('email',res.data.context.email)
+                localStorage.setItem('name',res.data.context.name)
+                localStorage.setItem('token',res.data.context.token)
+                localStorage.setItem('college',res.data.context.college)
+                localStorage.setItem('committee',res.data.context.committee)
+                localStorage.setItem('assigned',res.data.context.assigned)
+                dispatch({type:"set",payload:res.data.context})
+                console.log("signin context token in first : " + context.token)
+    
+                // navigate("/profile");
+                
+                
+            }).then(()=>{
+                navigate('/profile')
+            }).catch((err)=>{
                 document.getElementById('mes').style.color="red";
                 setMes("Invalid Email or Password!");
-            }
-            console.log("Signin res " +res.data.context.college)
-            localStorage.setItem('email',res.data.context.email)
-            localStorage.setItem('name',res.data.context.name)
-            localStorage.setItem('token',res.data.context.token)
-            localStorage.setItem('college',res.data.context.college)
-            localStorage.setItem('committee',res.data.context.committee)
-            localStorage.setItem('assigned',res.data.context.assigned)
-            dispatch({type:"set",payload:res.data.context})
-            console.log("signin context token in first : " + context.token)
+            })
+        }
+     
 
-            // navigate("/profile");
-            
-            
-        }).then(()=>{
-            navigate('/profile')
-        }).catch((err)=>{
-            document.getElementById('mes').style.color="red";
-            setMes("Invalid Email or Password!");
-        })
+        
 
      
     }

@@ -48,7 +48,7 @@ const Committees=()=>{
                 </div>
 
                 <div className="img_contain m-2 d-flex justify-content-center">
-                    <Card href="this is the link" h="20%" w="20%" im={UN} name="ths is the name" desc="Description: Discussion and Deliberation role and legality of private military contractors in conflict regions." agenda="Coming soon" style={{backgroundColor:"#11071F", width:"22rem",minHeight:"20rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
+                    <Card href="this is the link" h="20%" w="20%" im={UN} name="ths is the name" desc="Description: Discussion and Deliberation role and legality of private military contractors in conflict regions." agenda="Coming soon!" style={{backgroundColor:"#11071F", width:"22rem",minHeight:"20rem",maxHeight:"30rem",borderRadius:"10px",boxShadow:"4px 3px 4px"}}/>
                 </div>
 
 
